@@ -11,7 +11,7 @@ progress_tweet: Thanks for working on support for USB dongle auth, @TWITTERHANDL
 hash: SupportDongleAuth
 ---
 
-{% include header.html page='home' %}
+{% include dongle-header.html page='home' %}
 
 <noscript>
   <div class="ui icon error message">
@@ -31,7 +31,7 @@ hash: SupportDongleAuth
 </noscript>
 
 <div id="top-header" class="banner ui center aligned icon header">
-  <img src="{{ site.uri }}/img/usb_stick.png" class="icon" alt="USB Stick">
+  <img src="/pages/info/dongles/img/usb_stick.png" class="icon" alt="USB Stick">
 
   <h2>USB-Dongle Authentication</h2>
 
@@ -41,7 +41,7 @@ hash: SupportDongleAuth
       FIDO2, <a href="https://en.wikipedia.org/wiki/Universal_2nd_Factor">U2F</a>.
   </div>
   <div class="sub header">
-      Also see the list of <a href="{{ site.uri }}/dongles/">dongles</a> and the protocol they support.
+      Also see the list of <a href="/dongle-auth/dongles/">dongles</a> and the protocol they support.
   </div>
 
   <div id="search-wrapper" class="sub header">
@@ -65,10 +65,10 @@ hash: SupportDongleAuth
         <small>{{ section.title }}</small>
       </h5>
     </div>
-    {% include mobile-table.html id-param=section.id title-param=section.title %}
+    {% include dongle-mobile-table.html id-param=section.id title-param=section.title %}
     {% assign offcount = 5 | times: rowcount %}
     {% for section in site.data.sections limit: 5 offset: offcount %}
-    {% include desktop-table.html id-param=section.id title-param=section.title %}
+    {% include dongle-desktop-table.html id-param=section.id title-param=section.title %}
     {% endfor %}
   </div>
   {% if forloop.index != forloop.length %}
@@ -82,7 +82,7 @@ hash: SupportDongleAuth
         <small>{{ section.title }}</small>
       </h5>
     </div>
-    {% include mobile-table.html id-param=section.id title-param=section.title %}
+    {% include dongle-mobile-table.html id-param=section.id title-param=section.title %}
     {% endif %}
     {% endfor %}
   </div>
